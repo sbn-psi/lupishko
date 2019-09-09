@@ -20,23 +20,22 @@ if os.path.exists(new_abspath):
     os.remove(new_abspath)
 
 MISSING_VALUES = [
-    '-',            # column 1
-    '-',            # column 2
-    '-',            # column 3
-    '-999.999',     # column 4
-    '-',            # column 5
-    '-999.999',     # column 6
-    '-999.999',     # column 7
-    '-999.999',     # column 8
-    '-999.999',     # column 9
-    '-999.999',     # column 10
-    '-999.999',     # column 11
-    '-999.999',     # column 12
-    '-999.999',     # column 13
-    '-',            # column 14
-    '-999.999',     # column 15
-    '-',            # column 16
-    '-'             # column 17
+    '-',         # column 1
+    '-',         # column 2
+    '-',         # column 3
+    '-9.99',     # column 4
+    '-',         # column 5
+    '-9.99',     # column 6
+    '-9.99',     # column 7
+    '-9.99',     # column 8
+    '-9.99',     # column 9
+    '-9.99',     # column 10
+    '-9.99',     # column 11
+    '-9.99',     # column 12
+    '-9.99',     # column 13
+    '-',         # column 14
+    '-',         # column 15
+    '-'          # column 16
 ]
 
 
@@ -63,10 +62,9 @@ def main( file ):
                 row[71:76].strip(),             # column 11
                 row[77:83].strip(),             # column 12
                 row[84:90].strip(),             # column 13
-                row[91:99].strip(),             # column 14
-                row[100:103].strip(),           # column 15
-                row[105:109].strip(),           # column 16
-                row[111:len(row)].strip()       # column 17
+                row[91:103].strip(),            # column 14
+                row[105:109].strip(),           # column 15
+                row[111:len(row)].strip()       # column 16
             ]
             
             for idx, column in enumerate(newrow, start=0):
