@@ -20,22 +20,21 @@ if os.path.exists(new_abspath):
     os.remove(new_abspath)
 
 MISSING_VALUES = [
-    '-',         # column 1
-    '-',         # column 2
-    '-',         # column 3
-    '-9.99',     # column 4
-    '-',         # column 5
-    '-9.99',     # column 6
-    '-9.99',     # column 7
-    '-9.99',     # column 8
-    '-9.99',     # column 9
-    '-9.99',     # column 10
-    '-9.99',     # column 11
-    '-9.99',     # column 12
-    '-9.99',     # column 13
-    '-',         # column 14
-    '-',         # column 15
-    '-'          # column 16
+    '-',           # column 1
+    '-',           # column 2
+    '-',           # column 3
+    '-999.99',     # column 4
+    '-',           # column 5
+    '-999.99',     # column 6
+    '-999.99',     # column 7
+    '-999.99',     # column 8
+    '-999.99',     # column 9
+    '-999.99',     # column 10
+    '-999.99',     # column 11
+    '-999.99',     # column 12
+    '-999.99',     # column 13
+    '-',           # column 14
+    '-',           # column 15
 ]
 
 
@@ -63,8 +62,7 @@ def main( file ):
                 row[77:83].strip(),             # column 12
                 row[84:90].strip(),             # column 13
                 row[91:103].strip(),            # column 14
-                row[105:109].strip(),           # column 15
-                row[111:len(row)].strip()       # column 16
+                row[105:len(row)].strip()       # column 15
             ]
             
             for idx, column in enumerate(newrow, start=0):
