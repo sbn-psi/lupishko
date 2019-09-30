@@ -45,14 +45,16 @@ def main( file ):
     # loop through lines in input file
     with open(abspath, newline="\n") as csv_file:
         spamreader = csv.reader(csv_file)
+
         for row_arr in spamreader:
             row = row_arr[0]
+
             newrow = [
-                row[0:21].strip(),              # column 1
-                row[21:25].strip(),             # column 2
-                row[26:28].strip(),             # column 3
-                row[29:35].strip(),             # column 4
-                row[38:41].strip(),             # column 5
+                row[0:6].strip(),               # column 1
+                row[7:20].strip(),              # column 2
+                sub( r'--', '-0', sub( r' ', '-', row[21:31].strip() )),                      # column 3
+                row[32:35].strip(),             # column 4
+                row[36:41].strip(),             # column 5
                 row[41:47].strip(),             # column 6
                 row[48:53].strip(),             # column 7
                 row[54:58].strip(),             # column 8
@@ -64,7 +66,7 @@ def main( file ):
                 row[91:103].strip(),            # column 14
                 row[105:len(row)].strip()       # column 15
             ]
-            
+
             for idx, column in enumerate(newrow, start=0):
                 if not column:
                     newrow[idx] = MISSING_VALUES[idx]
