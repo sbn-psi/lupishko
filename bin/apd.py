@@ -5,6 +5,7 @@ import os.path as path
 import sys
 import csv
 from re import sub
+from re import search
 
 # Get/set filename
 # Set absolute path
@@ -37,6 +38,8 @@ MISSING_VALUES = [
     '-',           # column 15
 ]
 
+def formatName( name ):
+    return name[0:4] + " " + name[4:len(name)].upper()
 
 ### ##### #### ###
 ### BEGIN MAIN ###
@@ -70,6 +73,12 @@ def main( file ):
             for idx, column in enumerate(newrow, start=0):
                 if not column:
                     newrow[idx] = MISSING_VALUES[idx]
+
+            # if name is not formatted properly, format it
+            name = newrow[1]
+            if search(r"\d{4}",name) != None:
+                if search(r" ",name) == None:
+                    newrow[1] = formatName(name)
 
             with open(new_abspath, 'a+') as new_csv_file:
                 spamwriter = csv.writer(new_csv_file, delimiter=',')
