@@ -53,7 +53,7 @@ def main( file ):
                 row[0:6].strip(),               # column 1
                 row[7:20].strip(),              # column 2
                 sub( r'--', '-0', sub( r' ', '-', row[21:31].strip() )),                      # column 3
-                row[32:35].strip(),             # column 4
+                "0." + row[32:35].strip(),             # column 4
                 row[36:41].strip(),             # column 5
                 row[41:47].strip(),             # column 6
                 row[48:53].strip(),             # column 7
